@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> Caption:</strong>
+  <%= @post.caption %>
+</p>
+
+<% if current_user.id == @post.user_id %>
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Edit', edit_post_path(@post) %>
+<% else %>
+<% end %>
+<%= link_to 'Back', posts_path %>
